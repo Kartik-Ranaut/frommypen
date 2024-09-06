@@ -184,7 +184,7 @@ function App() {
       </div> */}
 
       <Routes>
-        <Route path="/" element={<Home setpostdata={setpostdata} setLatestId={setLatestId}></Home>}></Route>
+        <Route path="/frommypen" element={<Home setpostdata={setpostdata} setLatestId={setLatestId}></Home>}>
         <Route path="/blog" element={<Blog></Blog>}></Route>
         <Route path="/latest" element={<Latest></Latest>}></Route>
         <Route path="/contact" element={<Contact></Contact>}></Route>
@@ -193,6 +193,7 @@ function App() {
         <Route path="/blog/:blogId" element={<Content postdata={postdata}></Content>}></Route>
 
         <Route path="*" element={<div>Page not found</div>}></Route>
+        </Route>
       </Routes>
     </div>
     </div>
