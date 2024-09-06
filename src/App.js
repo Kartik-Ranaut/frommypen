@@ -162,13 +162,13 @@ function App() {
                           <button className="button-5 btnalso" onClick={()=>{document.cookie="token=;expires=Thu, 01 Jan 1970 00:00:00 UTC;"; setlogedin(false)} }><i class="fa-solid fa-right-from-bracket"></i>Log Out</button>
                          </div> : <div className="btnbox">
                           {/* if user is not logedin */}
-                          <button onClick={userbtnhandler} className="simple "><Link to="/login" className="button-5 btnalso" >Login</Link></button>
+                          <button onClick={userbtnhandler} className="simple "><Link to="/frommypen/login" className="button-5 btnalso" >Login</Link></button>
                           <div className="or">
                             <div className="line"></div>
                             <p>or</p>
                             <div className="line"></div>
                           </div>
-                          <button onClick={userbtnhandler} className="simple "><Link to="/signin" className="button-5 btnalso">Sign In</Link></button>
+                          <button onClick={userbtnhandler} className="simple "><Link to="/frommypen/signin" className="button-5 btnalso">Sign In</Link></button>
                         </div>
             }
 
