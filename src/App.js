@@ -129,11 +129,11 @@ function App() {
       <div className="header">
         <div className="weblogo"></div>
         <div className="Links  ">
-          <NavLink className="NavLink" to="/">Home</NavLink>
+          <NavLink className="NavLink" to="/frommypen">Home</NavLink>
           
-          <NavLink className="NavLink" to="/blog">Blog</NavLink>
-          <NavLink className="NavLink" to={`/blog/${latestId}`}>Latest</NavLink>
-          <NavLink className="NavLink" to="contact">Contact</NavLink>
+          <NavLink className="NavLink" to="/frommypen/blog">Blog</NavLink>
+          <NavLink className="NavLink" to={`/frommypen/blog/${latestId}`}>Latest</NavLink>
+          <NavLink className="NavLink" to="/frommypen/contact">Contact</NavLink>
         </div>
         <div className="search">
           <input className="srch" type="text" id="searchinput" placeholder="search" onChange={findsubstr}></input>
@@ -184,16 +184,15 @@ function App() {
       </div> */}
 
       <Routes>
-        <Route path="/frommypen" element={<Home setpostdata={setpostdata} setLatestId={setLatestId}></Home>}>
-        <Route path="/blog" element={<Blog></Blog>}></Route>
-        <Route path="/latest" element={<Latest></Latest>}></Route>
-        <Route path="/contact" element={<Contact></Contact>}></Route>
-        <Route path="/login" element={<Login setlogedin={setlogedin}></Login>}></Route>
-        <Route path="/signin" element={<Signin></Signin>}></Route>
-        <Route path="/blog/:blogId" element={<Content postdata={postdata}></Content>}></Route>
+        <Route path="/frommypen" element={<Home setpostdata={setpostdata} setLatestId={setLatestId}></Home>}></Route>
+        <Route path="/frommypen/blog" element={<Blog></Blog>}></Route>
+        <Route path="/frommypen/latest" element={<Latest></Latest>}></Route>
+        <Route path="/frommypen/contact" element={<Contact></Contact>}></Route>
+        <Route path="/frommypen/login" element={<Login setlogedin={setlogedin}></Login>}></Route>
+        <Route path="/frommypen/signin" element={<Signin></Signin>}></Route>
+        <Route path="/frommypen/blog/:blogId" element={<Content postdata={postdata}></Content>}></Route>
 
         <Route path="*" element={<div>Page not found</div>}></Route>
-        </Route>
       </Routes>
     </div>
     </div>
