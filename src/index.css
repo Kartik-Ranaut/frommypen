@@ -74,7 +74,7 @@
     z-index: 1000;
     
     position: fixed;
-    width: 100%;
+    width: 100vw;
     display: flex;
     justify-content: space-around;
     box-sizing: border-box;
@@ -158,7 +158,7 @@ h6{
     gap: 10px;
     border-right: 1px solid var(--text-color);
     border-bottom: 1px solid var(--text-color);
-
+    text-decoration: none;
     border-radius: 12px;
 }
 
@@ -202,6 +202,7 @@ h1{
     border: 1px solid var(--text-color);
     border-radius: 15px;
     box-sizing: border-box;
+    transition: .5s;
 }
 i{
     font-size: 1.3rem;
@@ -362,10 +363,17 @@ td{
 }
 .mobileview h6{
     font-size: 15px;
+    font-weight: 100;
 }
 .titleofcard{
   font-size: 22px;
   background-color: inherit;
+  text-decoration: none;
+  
+}
+Link{
+    user-select: none;
+    text-decoration:none;
 }
 .NavLink{
 
@@ -389,6 +397,20 @@ td{
 @media (width<1000px) {
     .Links{
         visibility: hidden;
+        width: 0px;
+    }
+   
+    .search{
+        gap: 15px;
+       
+    }
+    .searchresbox{
+        width: 275px !important;
+        overflow: hidden;
+    }
+    .searchresbox h4{
+        font-weight:400;
+        font-size: smaller;
     }
     .mobileview{
         z-index: 10;
@@ -405,6 +427,7 @@ td{
     .descriptiontab{
         width: 300px;
         height: 150px;
+        left:50px;
         justify-content: space-evenly;
         overflow: hidden;
         bottom: 100px;
@@ -449,6 +472,92 @@ td{
     .feedbacksection{
         width: 80vw;
         height: fit-content;
+    }
+   
+    
+}
+.rightcontent{
+    background-color: inherit;
+    display: flex;
+    flex-direction: column;
+    gap:10px
+}
+
+@media (width<500px){
+    .NavLink i{
+        font-size: .8rem;
+       
+    }
+    .NavLink h6{
+        font-size: .5rem;
+    }
+    .weblogo{
+        width: 100px !important;
+        height: 30px !important;
+    }
+    .card{
+        width: 80%;
+        height: fit-content;
+        flex-direction: row;
+    }
+    .cardimage{
+        width: 70px;
+        height: 70px;
+        object-fit: cover;
+    }
+    .rightcontent{
+        width: 180px;
+        gap: 5px;
+    }
+    .rightcontent h1{
+        font-weight: 400;
+        font-size: smaller;
+    }
+    .containercontent p{
+        font-weight: 200;
+    }
+    .search{
+        gap: 10px;
+    }
+    .srch{
+        width: 80px ;
+        
+    }
+    .srch:hover{
+        width: 130px;
+    }
+    .comment h2{
+        font-size: medium;
+        font-weight: 500;
+    }
+    .comment p{
+        font-size: medium;
+        font-weight: lighter;
+    }
+    .comments h1{
+        font-size: large;
+        font-weight:400;
+    }
+    .userinfo{
+        padding: 10px !important;
+        height: fit-content;
+    }
+    .cmt p{
+        padding: 0px !important;
+        padding-left: 50px !important;
+    }
+    .nature{
+        padding: 2px 3px;
+        font-size: small;
+        border-radius: 3px;
+    }
+    .author h4{
+        font-size: smaller;
+
+    }
+    .authorimg{
+        width: 20px;
+        height: 20px;
     }
 }
 

@@ -15,12 +15,12 @@ export default function Card(props) {
   }
   return (
     <Link to={`/frommypen/blog/${props._id}`} className='card' onClick={display} >
-
-        {/* {disply ? <Content content={props.content} title={props.title} img={props.img} date={props.date} nature={props.nature} _id={props._id}></Content>: <div></div>} */}
         <img className='cardimage' src={props.img}></img>
+        <div className='rightcontent'>
         <Nature nature={props.nature}></Nature>
         <h1 className='titleofcard'>{props.title}</h1>
         <Author Date={props.date}></Author>
+        </div>
         
     </Link>
   )

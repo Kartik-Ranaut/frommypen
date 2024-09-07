@@ -108,23 +108,12 @@ function App() {
     </div>
     <div className="app">
       <div className="mobileview">
-          {/* <a onClick={homeHandler}>
-          <i class="fa-solid fa-house"></i>
-          <h6>Home</h6></a>
-          <a onClick={blogHandler}>
-          <i class="fa-solid fa-blog"></i>
-          <h6>Blog</h6></a>
-          <a onClick={latestHandler}>
-          <i class="fa-solid fa-bolt"></i>
-          <h6>Latest</h6></a>
-          <a onClick={contactHandler}>
-          <i class="fa-solid fa-address-card"></i>
-          <h6>Contact</h6></a> */}
-          <Link to="/"> <i class="fa-solid fa-house"></i> <h6>Home</h6> </Link>
           
-          <Link to="/blog"><i class="fa-solid fa-blog"></i> <h6>Blog</h6> </Link>
-          <Link to="/latest"><i class="fa-solid fa-bolt"></i> <h6>Latest</h6></Link>
-          <Link to="contact"><i class="fa-solid fa-address-card"></i> <h6>Contact</h6></Link>
+          <NavLink className="NavLink" to="/frommypen"> <i class="fa-solid fa-house"></i> <h6>Home</h6> </NavLink>
+          
+          <NavLink className="NavLink" to="/frommypen/blog"><i class="fa-solid fa-blog"></i> <h6>Blog</h6> </NavLink>
+          <NavLink className="NavLink" to={`/frommypen/blog/${latestId}`}><i class="fa-solid fa-bolt"></i> <h6>Latest</h6></NavLink>
+          <NavLink className="NavLink" to="/frommypen/contact"><i class="fa-solid fa-address-card"></i> <h6>Contact</h6></NavLink>
       </div>
       <div className="header">
         <div className="weblogo"></div>
