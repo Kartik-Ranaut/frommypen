@@ -143,7 +143,7 @@ function App() {
             
             
               searchres.map((element)=>{
-                return(<div className="searchelemnt" onClick={()=>{navigate(`/blog/${element._id}`); let searchbox=document.getElementById("searchinput"); searchbox.value=""}}>
+                return(<div className="searchelemnt" onClick={()=>{navigate(`/frommypen/blog/${element._id}`); let searchbox=document.getElementById("searchinput"); searchbox.value=""}}>
                   <img src={element.img} className="searchimg"></img>
                   <h4>{element.title.substring(0,50)}</h4>
                 </div>)
