@@ -376,7 +376,7 @@ Link{
     text-decoration:none;
 }
 .NavLink{
-
+    all: unset;
     font-size: 1.4rem;
     user-select: none;
     text-decoration: none;
@@ -393,6 +393,9 @@ Link{
     /* border-bottom: 4px solid var(--text-color);
     border-radius: 1px;
     transition: 1s; */
+}
+.mobileview{
+    user-select: none;
 }
 @media (width<1000px) {
     .Links{
@@ -483,13 +486,14 @@ Link{
     gap:10px
 }
 
+
 @media (width<500px){
     .NavLink i{
-        font-size: .8rem;
+        font-size: 1rem;
        
     }
     .NavLink h6{
-        font-size: .5rem;
+        font-size: .7rem;
     }
     .weblogo{
         width: 100px !important;
