@@ -31,7 +31,7 @@ export default function Signin() {
            
             setloading(false);
             toast.success("signin Successfull");
-            navigate("/");
+            navigate("/frommypen");
         }
         else{
 

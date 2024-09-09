@@ -31,7 +31,7 @@ export default function Login(props) {
                 setCookie('token', res.token,3*20*1000)
                 setloading(false);
                 toast.success("Login Successfull");
-                navigate("/");
+                navigate("/frommypen");
             }
             else{
 
