@@ -44,10 +44,11 @@ export default function Content({postdata}) {
     console.log("comment created");
     console.log(datan);
     if(datan.success===false){
-      toast.error("You need to logedin.");
+      toast.error("You need to be logged in.");
     }
     else{
       toast.success("Successfully created comment.");
+      settextarea("");
     }
     call();
   }catch(error){
@@ -166,7 +167,7 @@ useEffect(()=>{
           <hr></hr>
           <div className='leave'>
               <h1>Leave a Comment</h1>
-              <textarea className ="inputcommment" placeholder='Type here..' onChange={textareahandler}></textarea>
+              <textarea id="textareainput" className ="inputcommment" placeholder='Type here..' onChange={textareahandler} value={textarea}></textarea>
               <button className='button-5' onClick={postcomment}>Post Comment</button>
           </div>
         </div>
