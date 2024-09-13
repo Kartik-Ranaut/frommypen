@@ -870,9 +870,9 @@ Link{
 
 .chatWithAi h3{
     text-align: center;
-    height: 10%;
+    height: 0%;
     color: white;
-    background-image: linear-gradient(to right, rgb(1 134 218), rgb(182 49 167));
+    background-color: black;
 }
 .inpbtn{
     height: 10%;
@@ -934,6 +934,7 @@ Link{
     border-radius: 10px;
 }
 .chatWithAi:hover h3{
+    height: 10%;
     background-image: linear-gradient(white,white);
     color: black;
 }
