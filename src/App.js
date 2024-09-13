@@ -4,6 +4,7 @@ import Home from "./Components/Home";
 import Blog from "./Components/Blog";
 import Latest from "./Components/Latest";
 import Contact from "./Components/Contact";
+import axios from 'axios';
 import Login from "./Components/Login";
 import Signin from "./Components/Signin";
 import Content from "./Components/Content";
@@ -15,6 +16,32 @@ import { NavLink,Link, Routes,Route } from "react-router-dom";
 
 function App() {
   const navigate=useNavigate();
+  let chatElement=document.getElementById("chatelement")
+  const [inputdata,setinputdata]= useState("");
+  const [inputres,setinputres]= useState([{res:"Hello! how can I assist you today?"}]);
+  const genbutton=async()=>{
+    
+    let datainput=inputdata;
+    let obj={send:datainput,res:"Loading..."}
+    setinputdata("");
+    setinputres(inputdataa=>[...inputdataa,obj]);
+    let response= await axios.post("https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=AIzaSyB3k5Kf4fxTXFFbdo8Rh6jv79I0hEVdy0E",
+      {"contents":[{"parts":[{"text":inputdata}]}]}
+    )
+
+
+    setinputres(inputress=>inputress.map(item=>
+      item.send === datainput ? {...item,res:response.data.candidates[0].content.parts[0].text.replaceAll("*","").replaceAll("#","")} : item
+    ));
+
+    chatElement.scrollTop = chatElement.scrollHeight;
+  }
+
+  function handleKeyDown(event){
+    if (event.key === 'Enter') {
+      genbutton();
+    }
+  }
 
   const [postdata,setpostdata]=useState([{content:"loading..",title:"loading..",date:"hh"},]);
   const [latestId,setLatestId]=useState();
@@ -164,6 +191,26 @@ function App() {
           </div>:<></>}
         </div>
       </div>
+     
+          <div className="chatWithAi">
+            <h3>Chat with AI</h3>
+            <div className="centerans" id="chatelement">
+              {
+                inputres.map((element)=>{
+                  return(<div>
+                   {element.send && <p className="send">{element.send}</p>}
+                   {element.res && <p className="recieve">{element.res}</p>}
+                  </div>)
+                })
+              }
+            </div>
+            <div className="inpbtn">
+            <input type="text"  onChange={(event)=>{setinputdata(event.target.value)}} value={inputdata} onKeyDown={handleKeyDown} placeholder="type something.."></input>
+            <button onClick={genbutton}>Generate</button>
+            </div>
+            
+          </div>
+
       {/* <div className="container">
         {selectHome && <Home {...dataji}></Home>}
         {selectBlog && <Blog></Blog>}
