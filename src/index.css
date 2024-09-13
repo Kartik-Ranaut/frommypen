@@ -398,6 +398,9 @@ Link{
     user-select: none;
 }
 @media (width<1000px) {
+    .chatWithAi{
+        bottom: 60px !important;
+    }
     .Links{
         visibility: hidden;
         width: 0px;
