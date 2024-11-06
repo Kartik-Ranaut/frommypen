@@ -66,7 +66,7 @@ export default function Signin() {
                 <label for="pwd" className='Input-label'>Password</label>
                 <input type="password"  name="password" className='Input-text' id="pwd" placeholder='enter a strong password' onChange={handleChange}></input>
             </div>
-            <button className="button-5" onClick={signinhandler}>Login</button>
+            <button className="button-5" onClick={signinhandler}>Sign In</button>
     </div>
   )
 }

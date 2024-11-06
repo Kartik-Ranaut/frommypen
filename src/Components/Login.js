@@ -58,9 +58,9 @@ export default function Login(props) {
             <h1 className='text-xl'>Login form</h1>
             <div className='Input'>
                 <label for="email" className='Input-label'>Email</label>
-                <input type="text"  name="email" className='Input-text' id="email" placeholder='e.g. abc@google.com ' onChange={handleChange}></input>
+                <input type="text"  name="email" className='Input-text' id="email" placeholder='your email' onChange={handleChange}></input>
                 <label for="pwd" className='Input-label'>Password</label>
-                <input type="password"  name="password" className='Input-text' id="pwd" placeholder='enter a strong password' onChange={handleChange}></input>
+                <input type="password"  name="password" className='Input-text' id="pwd" placeholder='enter your password' onChange={handleChange}></input>
             </div>
             <button className="button-5" onClick={loginhandler}>Login</button>
     
