@@ -5,6 +5,10 @@
     color: var(--background-color);
     background: var(--text-color);
   }
+
+  ::-webkit-scrollbar {
+    display: none;
+}
 .root{
     background-color: var(--background-color);
 }
