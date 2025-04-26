@@ -25,13 +25,17 @@ function App() {
     let obj={send:datainput,res:"Loading..."}
     setinputdata("");
     setinputres(inputdataa=>[...inputdataa,obj]);
-    let response= await axios.post("https://arogyadarshi-backend.onrender.com/api/geminiRequest",
-      {"contents":[{"parts":[{"text":inputdata}]}]}
-    )
-
-
+    let response= await fetch("https://arogyadarshi-backend.onrender.com/api/geminiRequest", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ message: inputdata }),
+    });
+    const data = await response.json();
+    console.log(data);
     setinputres(inputress=>inputress.map(item=>
-      item.send === datainput ? {...item,res:response.data.candidates[0].content.parts[0].text.replaceAll("*","").replaceAll("#","")} : item
+      item.send === datainput ? {...item,res:data.data.candidates[0].content.parts[0].text.replaceAll("*","").replaceAll("#","")} : item
     ));
 
     chatElement.scrollTop = chatElement.scrollHeight;
