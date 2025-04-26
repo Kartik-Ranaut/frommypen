@@ -25,7 +25,7 @@ function App() {
     let obj={send:datainput,res:"Loading..."}
     setinputdata("");
     setinputres(inputdataa=>[...inputdataa,obj]);
-    let response= await axios.post("https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=AIzaSyB3k5Kf4fxTXFFbdo8Rh6jv79I0hEVdy0E",
+    let response= await axios.post("https://arogyadarshi-backend.onrender.com/api/geminiRequest",
       {"contents":[{"parts":[{"text":inputdata}]}]}
     )
 
